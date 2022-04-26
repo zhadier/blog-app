@@ -24,16 +24,33 @@
  > git clone git@github.com:zhadier/blog-app.git
  ```
 
+- Then cd into the directory using
+
+ ```bash
+ > cd blog-app
+ ```
+
 - Alternatively, you can just download the complete zip file and extract the folder in your directory
 
 #### Step 2:
 
-In the project directory, you can run:
+- In the project directory, you first download all dependencies using:
+
+```bash
+> bundle install
+```
+
+- then setup the db using the following command in the CL
+
+```bash
+> rails db:setup
+```
+
+- Finally, you can use this command to start the live server and checkout the app!
 
 ```bash
 > rails s
 ```
-to start the live server.
 ## Authors
 
 👤 **Zeeshan Haider**
