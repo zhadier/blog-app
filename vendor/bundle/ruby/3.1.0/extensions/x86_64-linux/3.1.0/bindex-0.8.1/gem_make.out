@@ -1,0 +1,15 @@
+current directory: /home/zeeshan/Documents/Microverse-Rails/blog-app/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+/home/zeeshan/.rbenv/versions/3.1.1/bin/ruby -I /home/zeeshan/.rbenv/versions/3.1.1/lib/ruby/site_ruby/3.1.0 -r ./siteconf20220426-3876-4pxfi5.rb extconf.rb
+creating Makefile
+
+current directory: /home/zeeshan/Documents/Microverse-Rails/blog-app/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: /home/zeeshan/Documents/Microverse-Rails/blog-app/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/zeeshan/Documents/Microverse-Rails/blog-app/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20220426-3876-9mmmkn/skiptrace/internal
