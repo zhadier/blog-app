@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   context 'GET #index' do
-    before(:example) { get user_posts_path(1) }  # get(:index)
+    before(:example) { get user_posts_path(1) } # get(:index)
     it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
@@ -21,7 +21,7 @@ RSpec.describe 'Posts', type: :request do
   end
 
   context 'GET #show' do
-    before(:example) { get user_post_path(user_id: 1, id: 2)} # get(:show)
+    before(:example) { get user_post_path(user_id: 1, id: 2) } # get(:show)
     it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
