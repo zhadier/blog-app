@@ -51,6 +51,14 @@
 ```bash
 > rails s
 ```
+
+## Testing:
+To perform tests, run the following command
+
+```bash
+> bundle exec rspec spec
+```
+
 ## Authors
 
 👤 **Zeeshan Haider**
