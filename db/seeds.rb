@@ -12,7 +12,7 @@ second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-
 first_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post')
 second_post = Post.create(author: first_user, title: 'Hello', text: 'This is my second post')
 third_post = Post.create(author: first_user, title: 'Hello', text: 'This is my third post')
-fourth_post = Post.create(author: second_user, title: 'Hello', text: 'This is the fourth post')
+fourth_post = Post.create(author: first_user, title: 'Hello', text: 'This is the fourth post')
 
 Comment.create(post: first_post, author: second_user, text: 'Hi Lisandro!' )
 Comment.create(post: first_post, author: second_user, text: 'Hi Sahar!' )
