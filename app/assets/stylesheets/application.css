@@ -13,3 +13,156 @@
  *= require_tree .
  *= require_self
  */
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+/* ### Users List ### */
+.users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 5%;
+}
+
+.users-list_user {
+  display: flex;
+  gap: 30px;
+}
+
+.users-list_img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 3px solid black;
+}
+
+.users-list_img img {
+  width: 100%;
+  height: 100%;
+}
+
+.users-list_desc {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20%;
+  align-items: center;
+  border: 3px solid black;
+  padding: 3%;
+}
+
+.users-list_name {
+  font-size: 2.5rem;
+}
+
+.users-list_posts {
+  font-size: 1.5rem;
+  align-self: flex-end;
+}
+
+/* ### User ### */
+.user {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 1% 2%;
+  border: 3px solid black;
+}
+
+.user-container_heading {
+  font-size: 1.5rem;
+}
+
+.user-container_text {
+  font-size: 1.5rem;
+}
+
+.user-posts_stats {
+  display: flex;
+  gap: 30px;
+  justify-content: flex-end;
+}
+
+.user-posts_stats p {
+  width: 90px;
+}
+
+button {
+  width: 140px;
+  height: 35px;
+  font-size: 1.2rem;
+  align-self: center;
+  box-shadow: 5px 5px;
+  outline: 1px solid black;
+  background-color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ### Posts_list ### */
+.posts {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.post-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.comment {
+  display: flex;
+  font-size: 1.4rem;
+}
+
+.comment p {
+  font-weight: 700;
+}
+
+.comment p span {
+  font-weight: 400;
+}
+
+/* ### Post ### */
+.single-post {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.post-container_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-container_stats {
+  display: flex;
+  gap: 30px;
+  justify-content: flex-end;
+}
+
+.post-container_stats p {
+  width: 90px;
+}
+
+.post-container_text {
+  font-size: 1.5rem;
+}
