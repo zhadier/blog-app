@@ -1,1 +1,9 @@
-<h1> Inside users show </h1>
+<section class="user">
+  <%= render partial: "shared/user", locals: {user: @user_current} %>
+  <div class="user-bio container">
+    <h3 class="user-container_heading">Bio</h3>
+    <p class="user-container_text"><%= @user_current.bio %></p>
+  </div>
+  <%= render partial: "shared/post", collection: @user_current.recent_posts %>
+  <button class="see-all">See all posts</button>
+</section>
