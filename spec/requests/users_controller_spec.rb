@@ -16,12 +16,12 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'has correct placeholder text' do
-      expect(response.body).to include('Inside users index')
+      expect(response.body).to include('post')
     end
   end
 
   context 'GET #show' do
-    before(:example) { get '/users/3' } # get(:show)
+    before(:example) { get '/users/1' } # get(:show)
     it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
@@ -35,7 +35,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'has correct placeholder text' do
-      expect(response.body).to include('Inside users show')
+      expect(response.body).to include('Posts')
     end
   end
 end
