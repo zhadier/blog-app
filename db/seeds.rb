@@ -20,3 +20,8 @@ Comment.create(post: first_post, author: second_user, text: 'Hi Andres!' )
 Comment.create(post: first_post, author: second_user, text: 'Hi Nicolas!' )
 Comment.create(post: first_post, author: second_user, text: 'Hi Reem!' )
 Comment.create(post: first_post, author: second_user, text: 'Hi Other Stalkers!' )
+
+Like.create(post: Post.first, author:User.first)
+Like.create(post: Post.second, author:User.first)
+Like.create(post: Post.third, author:User.second)
+Like.create(post: Post.fourth, author:User.first)
