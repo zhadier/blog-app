@@ -97,7 +97,7 @@
 }
 
 .user-posts_stats p {
-  width: 90px;
+  width: 100px;
 }
 
 button {
@@ -160,9 +160,13 @@ button {
 }
 
 .post-container_stats p {
-  width: 90px;
+  width: 100px;
 }
 
 .post-container_text {
   font-size: 1.5rem;
+}
+
+.heart {
+  width: 20px;
 }
