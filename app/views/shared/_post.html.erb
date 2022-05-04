@@ -1,0 +1,11 @@
+<div class="user-posts container">
+  <h3 class="user-container_heading"><%= post.title %>
+    #<%= post.id %></h3>
+  <p class="user-container_text"><%= truncate(post.text, :length => 50) %></p>
+  <div class="user-posts_stats">
+    <p>Comments :
+      <%= post.comments_counter %></p>
+    <p>Likes:
+      <%= post.likes_counter %></p>
+  </div>
+</div>

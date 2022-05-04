@@ -16,7 +16,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'has correct placeholder text' do
-      expect(response.body).to include('Inside posts index')
+      expect(response.body).to include('Comments')
     end
   end
 
@@ -35,7 +35,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'has correct placeholder text' do
-      expect(response.body).to include('Inside posts show')
+      expect(response.body).to include('Comments')
     end
   end
 end

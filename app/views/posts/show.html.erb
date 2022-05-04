@@ -1,1 +1,20 @@
-<h1> Inside posts show </h1>
+<section class="single-post">
+  <div class="post-container container">
+    <div class="post-container_title">
+      <h3 class="post-container_heading"><%= @post_current.title %>
+        #<%= @post_current.id %>
+        by
+        <%= @post_current.author.name %></h3>
+      <div class="post-container_stats">
+        <p>Comments :
+          <%= @post_current.comments_counter %></p>
+        <p>Likes:
+          <%= @post_current.likes_counter %></p>
+      </div>
+    </div>
+    <p class="post-container_text"><%= @post_current.text %></p>
+  </div>
+  <div class="post-comments container">
+    <%= render partial: "shared/comment", collection: @post_current.comments %>
+  </div>
+</section>

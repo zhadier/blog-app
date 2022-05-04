@@ -1,1 +1,14 @@
-<h1> Inside posts index </h1>
+<section class="posts">
+  <%= render partial: "shared/user", locals: {user: @user} %>
+  <% @posts.each do |current_post| %>
+    <div class="post-item">
+      <%= render partial: "shared/post", locals: {post: current_post} %>
+      <% if !current_post.comments.empty? %>
+        <div class="post-comments container">
+          <%= render partial: "shared/comment", collection: current_post.recent_comments %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <button class="pagination">Pagination</button>
+</section>
