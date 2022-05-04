@@ -6,6 +6,7 @@
         by
         <%= @post_current.author.name %></h3>
       <div class="post-container_stats">
+        <%= render partial: "shared/like_form" %>
         <p>Comments :
           <%= @post_current.comments_counter %></p>
         <p>Likes:
@@ -16,5 +17,6 @@
   </div>
   <div class="post-comments container">
     <%= render partial: "shared/comment", collection: @post_current.comments %>
+    <%= render partial: "shared/comment_form" %>
   </div>
 </section>
