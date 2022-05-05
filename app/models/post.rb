@@ -6,13 +6,16 @@ class Post < ApplicationRecord
   after_create do
     update(likes_counter: 0)
     update(comments_counter: 0)
+    update_posts_counter
   end
 
   def recent_comments
     comments.order(created_at: :desc).limit(5)
   end
 
-  after_create :update_posts_counter
+  def liked?(user)
+    likes.find { |like| like.user_id == user.id }
+  end
 
   after_destroy do
     author.decrement!(:posts_counter)

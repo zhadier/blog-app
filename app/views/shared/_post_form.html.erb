@@ -1,0 +1,17 @@
+<section class="new-post">
+  <h1 class="new-post_heading">Create a New Post</h1>
+    <%=  form_with model:new_post, url: user_posts_url, class: "new-post_form" do |form| %>
+
+      <div class= new-post_title >
+        <%= form.label :title, "Title: "  %> 
+        <%= form.text_field :title, autofocus: true %>
+      </div>
+
+      <div class= "new-post_desc" >
+        <%= form.label :text, "Content: " %> 
+        <%= form.text_area :text ,rows:5,  cols: 100 %>
+      </div>
+
+      <%= form.submit "Submit", class:"submit-post" %>
+    <% end %>
+</section>
