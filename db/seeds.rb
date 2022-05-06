@@ -19,7 +19,7 @@ second_post = Post.create(author: first_user, title: 'Hello', text: 'This is my 
 third_post = Post.create(author: first_user, title: 'Hello', text: 'This is my third post')
 fourth_post = Post.create(author: first_user, title: 'Hello', text: 'This is the fourth post')
 (0..25).each do |_item|
-  Post.create(author: User.find(rand(1..12)), title: title[rand(6)], text: generate_lorem)
+  Post.create(author: User.find(rand(1..11)), title: title[rand(6)], text: generate_lorem)
 end
 
 Comment.create(post: first_post, author: second_user, text: 'Hi Lisandro!')
@@ -29,7 +29,7 @@ Comment.create(post: first_post, author: second_user, text: 'Hi Nicolas!')
 Comment.create(post: first_post, author: second_user, text: 'Hi Reem!')
 Comment.create(post: first_post, author: second_user, text: 'Hi Other People!')
 (1..20).each do |_item|
-  Comment.create(post: Post.find(rand(1..30)), author: User.find(rand(1..12)),
+  Comment.create(post: Post.find(rand(1..30)), author: User.find(rand(1..11)),
                  text: generate_lorem)
 end
 
@@ -38,5 +38,5 @@ Like.create(post: Post.second, author: User.first)
 Like.create(post: Post.third, author: User.second)
 Like.create(post: Post.fourth, author: User.first)
 (1..30).each do |_item|
-  Like.create(post: Post.find(rand(1..30)), author: User.find(rand(1..12)))
+  Like.create(post: Post.find(rand(1..30)), author: User.find(rand(1..11)))
 end

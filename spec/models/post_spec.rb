@@ -37,5 +37,15 @@ RSpec.describe Post, type: :model do
       subject.title = nil
       expect(subject).to_not be_valid
     end
+    it 'should return 5 most recent comments' do
+      last_five_comments = []
+      (1..10).each do |i|
+        comment = subject.comments.create(text: 'text', author: @user)
+        last_five_comments << comment if i > 5
+      end
+      recent_comments = subject.recent_comments
+      expect(recent_comments.length).to eq(5)
+      expect(recent_comments).to eq(last_five_comments.reverse)
+    end
   end
 end
