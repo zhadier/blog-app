@@ -37,6 +37,13 @@ RSpec.describe Post, type: :model do
       subject.title = nil
       expect(subject).to_not be_valid
     end
+  end
+  context 'comments_counter' do
+    before(:example) do
+      @user = User.create(name: 'Zeeshan', posts_counter: 0)
+    end
+    subject { @user.posts.new(title: 'Post', text: 'Lorem Ipsem', likes_counter: 0, comments_counter: 0) }
+    before { subject.save }
     it 'should return 5 most recent comments' do
       last_five_comments = []
       (1..10).each do |i|
