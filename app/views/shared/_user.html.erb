@@ -1,9 +1,12 @@
 <div class="users-list_user">
-    <div class="users-list_img">
-      <img src=<%= user.photo %> alt="">
-    </div>
-    <div class="users-list_desc">
+  <div class="users-list_img">
+    <img src=<%= user.photo %> alt="">
+  </div>
+  <div class="users-list_desc">
+    <%= link_to user_path(user.id), class:"link-to_user" do %>
       <h2 class="users-list_name"><%= user.name %></h2>
-      <p class="users-list_posts">Number of Posts: <%= user.posts_counter %></p>
-    </div>
+    <% end %>
+    <p class="users-list_posts">Number of Posts:
+      <%= user.posts_counter %></p>
+  </div>
 </div>
