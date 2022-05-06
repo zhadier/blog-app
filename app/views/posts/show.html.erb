@@ -1,4 +1,5 @@
 <section class="single-post">
+  <%= render partial: "shared/back", locals: {back:user_posts_path} %>
   <div class="post-container container">
     <div class="post-container_title">
       <h3 class="post-container_heading"><%= @post_current.title %>
@@ -6,17 +7,18 @@
         by
         <%= @post_current.author.name %></h3>
       <div class="post-container_stats">
-        <%= render partial: "shared/like_form" %>
+
         <p>Comments :
           <%= @post_current.comments_counter %></p>
         <p>Likes:
           <%= @post_current.likes_counter %></p>
+        <%= render partial: "shared/like_form", locals: {user_id: params[:user_id], post_id: params[:id]} %>
       </div>
     </div>
     <p class="post-container_text"><%= @post_current.text %></p>
   </div>
   <div class="post-comments container">
-    <%= render partial: "shared/comment", collection: @post_current.comments %>
-    <%= render partial: "shared/comment_form" %>
+    <%= render partial: "shared/comment", collection: @post_current.comments.includes(:author, :post) %>
+    <%= render partial: "shared/comment_form", locals: {user_id: params[:user_id],post_id: params[:id]} %>
   </div>
 </section>
