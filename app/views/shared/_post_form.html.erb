@@ -1,6 +1,9 @@
+
+
 <section class="new-post">
+<%= render partial: "shared/back", locals: {back:user_posts_path}%>
   <h1 class="new-post_heading">Create a New Post</h1>
-    <%=  form_with model:new_post, url: user_posts_url, class: "new-post_form" do |form| %>
+    <%=  form_with model:new_post, url: user_posts_url(user_id: current_user_id), class: "new-post_form" do |form| %>
 
       <div class= new-post_title >
         <%= form.label :title, "Title: "  %> 

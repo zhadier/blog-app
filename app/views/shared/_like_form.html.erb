@@ -1,3 +1,5 @@
-<%= form_with url: user_post_likes_path(post_id:params[:id]), class: "like-form", scope: :like do |form| %>
-  <%= form.submit "", :type => :image, :src => "https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.png", class: "heart" %>
+<%= form_with Model: Like.new, url: user_post_likes_path(user_id: user_id,post_id: post_id), class: "like-form", scope: :like do |form| %>
+  <%= button_tag type: 'submit', class: "heart" do %>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  <% end %>
 <% end %>

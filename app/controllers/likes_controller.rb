@@ -1,16 +1,20 @@
 class LikesController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
-    @user = User.find(params[:user_id])
+    @user = current_user
+    @new_like = Like.new(post: @post, author: @user)
     respond_to do |format|
       format.html do
-        @new_like = Like.new(post: @post, author: @user)
         if @new_like.save
-          flash.now[:success] = 'Liked'
+          flash[:success] = 'Liked Post'
+          redirect_back(fallback_location: root_path)
+        elsif @post.liked?(@user.id)
+          Like.where(author: @user, post: @post).destroy_all
+          flash[:success] = 'Unliked Post'
+          redirect_back(fallback_location: root_path)
         else
-          Like.where(author: @user, post: @post).delete_all
+          flash.now[:alert] = 'Error while trying to like post'
         end
-        redirect_to user_post_url(id: params[:post_id])
       end
     end
   end

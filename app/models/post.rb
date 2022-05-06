@@ -2,23 +2,26 @@ class Post < ApplicationRecord
   belongs_to :author, class_name: 'User'
   has_many :likes
   has_many :comments
+  validates :title, presence: true, length: { maximum: 250 }
+  validates :comments_counter, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
+  validates :likes_counter, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
 
-  after_create do
-    update(likes_counter: 0)
-    update(comments_counter: 0)
+  before_create do
+    self.likes_counter = 0
+    self.comments_counter = 0
     update_posts_counter
-  end
-
-  def recent_comments
-    comments.order(created_at: :desc).limit(5)
-  end
-
-  def liked?(user)
-    likes.find { |like| like.user_id == user.id }
   end
 
   after_destroy do
     author.decrement!(:posts_counter)
+  end
+
+  def recent_comments
+    comments.includes(:author, :post).order(created_at: :desc).limit(5)
+  end
+
+  def liked?(user_id)
+    likes.find { |like| like.author_id == user_id }
   end
 
   private

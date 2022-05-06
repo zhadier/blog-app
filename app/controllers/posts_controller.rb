@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   before_action :current_user
 
   def index
-    @posts = @user.posts
+    @user = User.find(params[:user_id])
+    @posts = @user.posts.includes(:author, :comments, :likes).order(created_at: :desc)
   end
 
   def show
@@ -17,16 +18,17 @@ class PostsController < ApplicationController
   end
 
   def create
+    @new_post = @current_user.posts.new(post_params)
+    @new_post.likes_counter = 0
+    @new_post.comments_counter = 0
     respond_to do |format|
       format.html do
-        values = params.require(:post).permit(:title, :text)
-        @new_post = Post.new(author: @user, title: values[:title], text: values[:text])
         if @new_post.save
           flash[:success] = 'Post was saved'
-          redirect_to action: :index, user_id: @user.id
+          redirect_to user_post_path(user_id: @current_user.id, id: @new_post.id)
         else
-          flash.now[:error] = 'Error: Post already liked'
-          render :new
+          flash[:error] = 'Error: Unable to create post'
+          redirect_to new_user_post_path
         end
       end
     end
@@ -34,7 +36,7 @@ class PostsController < ApplicationController
 
   private
 
-  def current_user
-    @user = User.find(params[:user_id])
+  def post_params
+    params.require(:post).permit(:title, :text)
   end
 end

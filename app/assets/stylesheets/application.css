@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+/*
+ *= require font-awesome
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -20,6 +25,18 @@
   scroll-behavior: smooth;
   box-sizing: border-box;
   list-style: none;
+}
+
+.link {
+  border: 1px solid black;
+  background-color: rgb(127, 151, 219);
+  border-radius: 5px;
+  color: black;
+  padding: 7px;
+  box-shadow: 5px 5px;
+  outline: 1px solid black;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 /* ### Users List ### */
@@ -50,9 +67,8 @@
 .users-list_desc {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  gap: 20%;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   border: 3px solid black;
   padding: 3%;
 }
@@ -64,6 +80,14 @@
 .users-list_posts {
   font-size: 1.5rem;
   align-self: flex-end;
+}
+
+.link-to_user {
+  color: black;
+}
+
+.link-to_user:hover {
+  color: rgb(127, 151, 219);
 }
 
 /* ### User ### */
@@ -92,12 +116,8 @@
 
 .user-posts_stats {
   display: flex;
-  gap: 30px;
-  justify-content: flex-end;
-}
-
-.user-posts_stats p {
-  width: 100px;
+  margin-left: auto;
+  gap: 25px;
 }
 
 button {
@@ -117,7 +137,7 @@ button {
   padding: 5%;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 50px;
 }
 
 .post-item {
@@ -155,12 +175,8 @@ button {
 
 .post-container_stats {
   display: flex;
-  gap: 30px;
-  justify-content: flex-end;
-}
-
-.post-container_stats p {
-  width: 100px;
+  gap: 25px;
+  margin-left: auto;
 }
 
 .post-container_text {
@@ -168,5 +184,56 @@ button {
 }
 
 .heart {
-  width: 20px;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  width: auto;
+  height: auto;
+  color: red;
+}
+
+.liked {
+  color: black;
+}
+
+/* ### Comment Box ### */
+.comment-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.comment-form_text {
+  border: none;
+  align-items: center;
+  padding: 5px;
+  width: 100%;
+  height: 25px;
+}
+
+.submit-comment {
+  padding: 10px;
+  background-color: rgb(127, 151, 219);
+  border-radius: 5px;
+  box-shadow: 5px 5px;
+  outline: 1px solid black;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.user-container_misc {
+  display: flex;
+  align-items: center;
+}
+
+.new-post {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.flash {
+  display: flex;
 }
