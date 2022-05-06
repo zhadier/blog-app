@@ -1,4 +1,4 @@
-<%= form_with url: user_post_comments_path(post_id:params[:id]), class: "comment-form", scope: :comment do |form| %>
-  <%= form.text_area :text, class:"comment-form_text", autofocus: true, placeholder: "Add comment ...", required: true %>
-  <%= form.submit "Comment" %>
+<%= form_with model:Comment.new,  url: user_post_comments_path(user_id: user_id, post_id:post_id), class: "comment-form", scope: :comment do |form| %>
+  <%= form.text_area :text, class:"comment-form_text", placeholder: "Add comment ..." %>
+  <%= form.submit "Comment", class: "submit-comment" %>
 <% end %>

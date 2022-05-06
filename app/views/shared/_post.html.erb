@@ -2,10 +2,14 @@
   <h3 class="user-container_heading"><%= post.title %>
     #<%= post.id %></h3>
   <p class="user-container_text"><%= truncate(post.text, :length => 50) %></p>
-  <div class="user-posts_stats">
-    <p>Comments :
-      <%= post.comments_counter %></p>
-    <p>Likes:
-      <%= post.likes_counter %></p>
+  <div class="user-container_misc">
+    <%= link_to "See Post", user_post_path(user_id: post.author_id, id: post.id), class:"link" %>
+    <div class="user-posts_stats">
+      <p>Comments :
+        <%= post.comments_counter %></p>
+      <p>Likes:
+        <%= post.likes_counter %></p>
+      <%= render partial: "shared/like_form", locals: {user_id: post.author_id, post_id: post.id} %>
+    </div>
   </div>
 </div>
