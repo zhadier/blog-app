@@ -8,11 +8,10 @@ class CommentsController < ApplicationController
         @new_comment = Comment.new(post: @post, author: @user, text: values[:text])
         if @new_comment.save
           flash[:success] = 'Comment was saved'
-          redirect_back(fallback_location: root_path)
         else
           flash[:error] = 'Failed to add comment'
-          redirect_back(fallback_location: root_path)
         end
+        redirect_back(fallback_location: root_path)
       end
     end
   end

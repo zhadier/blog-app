@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.1'
 
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
 gem 'erb-formatter'
 
