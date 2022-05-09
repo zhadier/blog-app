@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :posts_counter, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
 
   before_create do
-    posts_counter = 0
+    self.posts_counter = 0
   end
 
   def recent_posts
