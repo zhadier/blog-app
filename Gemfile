@@ -20,6 +20,9 @@ gem 'sprockets-rails'
 # Devise
 gem 'devise'
 
+# CanCanCan
+gem 'cancancan'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 
