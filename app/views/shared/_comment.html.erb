@@ -1,4 +1,7 @@
 <div class="comment">
   <p><%= comment.author.name %>:
     <span><%= comment.text %></span></p>
+  <%= button_to user_post_comment_path(user_id: comment.post.author_id, post_id: comment.post_id, id: comment.id), class:"link", method: :delete do %>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  <% end %>
 </div>

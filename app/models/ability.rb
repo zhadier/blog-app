@@ -9,6 +9,7 @@ class Ability
     can :read, :all
     return unless user.is?('default')
 
+    can :create, Comment
     can :manage, Post, author: user
     can :manage, Comment, author: user
     can :manage, Like, author: user
