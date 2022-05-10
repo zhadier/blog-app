@@ -237,3 +237,54 @@ button {
 .flash {
   display: flex;
 }
+
+.devise-form {
+  margin: 7%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  width: 80%;
+}
+
+.field input {
+  width: 100%;
+  height: 30px;
+  border: 3px solid;
+  padding: 2px 5px;
+}
+
+.field input::placeholder {
+  color: black;
+}
+
+.actions {
+  width: 80%;
+  margin-top: 30px;
+}
+
+.devise-button {
+  width: 100%;
+  height: 30px;
+  font-size: 1.2rem;
+  box-shadow: 5px 5px;
+  outline: 1px solid black;
+  background-color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.devise-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.field .devise-check {
+  width: auto;
+  padding: 0;
+  height: auto;
+}
