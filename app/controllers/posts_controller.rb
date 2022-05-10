@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   before_action :current_user
 
   def index
@@ -32,6 +33,13 @@ class PostsController < ApplicationController
         end
       end
     end
+  end
+
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    flash[:success] = 'Post was deleted'
+    redirect_to user_posts_path(post.author.id)
   end
 
   private

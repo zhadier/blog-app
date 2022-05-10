@@ -27,6 +27,11 @@
   list-style: none;
 }
 
+.blog-btn-container {
+  display: flex;
+  gap: 7px;
+}
+
 .link {
   border: 1px solid black;
   background-color: rgb(127, 151, 219);
@@ -35,6 +40,7 @@
   padding: 7px;
   box-shadow: 5px 5px;
   outline: 1px solid black;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
 }
