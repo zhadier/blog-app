@@ -78,6 +78,14 @@ group :development do
   # gem "spring"
 end
 
+# Add Rspec
+# Run against this stable release
+group :development, :test do
+  gem 'rails-controller-testing'
+  gem 'rspec-rails', '~> 6.0.0.rc1'
+  gem 'database_cleaner'
+end
+
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
@@ -85,9 +93,4 @@ group :test do
   gem 'webdrivers'
 end
 
-# Add Rspec
-# Run against this stable release
-group :development, :test do
-  gem 'rails-controller-testing'
-  gem 'rspec-rails', '~> 6.0.0.rc1'
-end
+
