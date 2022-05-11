@@ -15,12 +15,6 @@ RSpec.describe 'Login_page', type: :feature do
     click_button('Log in')
     expect(page).to have_content('Invalid Email or password.')
   end
-  it 'gives error if submit button pressed with wrong input data' do
-    fill_in 'Email', with: 'Piero@gmail.com'
-    fill_in 'Password', with: 'Incorrect'
-    click_button('Log in')
-    expect(page).to have_content('Invalid Email or password.')
-  end
 
   it 'gives error if submit button pressed with wrong input data' do
     fill_in 'Email', with: 'Piero@gmail.com'

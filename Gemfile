@@ -81,9 +81,9 @@ end
 # Add Rspec
 # Run against this stable release
 group :development, :test do
+  gem 'database_cleaner'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 6.0.0.rc1'
-  gem 'database_cleaner'
 end
 
 group :test do
@@ -92,5 +92,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
-
