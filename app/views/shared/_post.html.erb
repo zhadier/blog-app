@@ -3,7 +3,12 @@
     #<%= post.id %></h3>
   <p class="user-container_text"><%= truncate(post.text, :length => 50) %></p>
   <div class="user-container_misc">
-    <%= link_to "See Post", user_post_path(user_id: post.author_id, id: post.id), class:"link" %>
+    <div class="blog-btn-container">
+      <%= link_to "See Post", user_post_path(user_id: post.author_id, id: post.id), class:"link" %>
+      <% if can? :destroy, post %>
+        <%= button_to "Delete Post", user_post_path(user_id: post.author_id, id: post.id), class:"link", method: :delete %>
+      <% end %>
+    </div>
     <div class="user-posts_stats">
       <p>Comments :
         <%= post.comments_counter %></p>
