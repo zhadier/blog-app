@@ -1,3 +1,4 @@
 <section class="users-list">
+  <%= button_to "Logout", destroy_user_session_path, class:"link", method: :delete %>
   <%= render partial: "shared/user", collection: @users %>
 </section>
