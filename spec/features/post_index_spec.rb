@@ -30,7 +30,6 @@ RSpec.describe 'Post Index Page', type: :feature do
 
   it 'displays some of the content fo the post' do
     post = @user.posts.take
-    puts post
     expect(page).to have_content(post.text[0...47])
   end
 

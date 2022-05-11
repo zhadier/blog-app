@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Comment', type: :model do
   describe 'Comment Model' do
     before(:example) do
-      @user = User.create(name: 'Zeeshan', posts_counter: 0)
-      @post = Post.create(author: @user, title: 'Post', text: 'Lorem Ipsem', comments_counter: 0, likes_counter: 0)
+      @user = User.take
+      @post = @user.posts.create(title: 'Post', text: 'Lorem Ipsem', comments_counter: 0, likes_counter: 0)
     end
 
     subject { Comment.new(text: 'Hi', author: User.first, post: Post.first) }
