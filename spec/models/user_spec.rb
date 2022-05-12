@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'User', type: :model do
   context 'User Model' do
-    subject { User.new(name: 'Zeeshan', posts_counter: 0) }
+    subject { User.new(name: 'Zeeshan', posts_counter: 0, email: 'zhadier@gmail.com', password: 'rooted') }
     before { subject.save }
 
     it 'User does not have errors if name is not nil and post_counter > 0' do

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   context 'Post Model' do
     before(:example) do
-      @user = User.create(name: 'Zeeshan', posts_counter: 0)
+      @user = User.first
     end
 
     subject { @user.posts.new(title: 'Post', text: 'Lorem Ipsem', likes_counter: 0, comments_counter: 0) }
@@ -40,7 +40,7 @@ RSpec.describe Post, type: :model do
   end
   context 'comments_counter' do
     before(:example) do
-      @user = User.create(name: 'Zeeshan', posts_counter: 0)
+      @user = User.first
     end
     subject { @user.posts.new(title: 'Post', text: 'Lorem Ipsem', likes_counter: 0, comments_counter: 0) }
     before { subject.save }

@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe Like, type: :model do
   describe 'like model' do
     before(:all) do
-      @user = User.create(name: 'Zeeshan', posts_counter: 0)
-      @post = Post.create(author: @user, title: 'Post', text: 'Lorem Ipsem', comments_counter: 0, likes_counter: 0)
+      @user = User.first
+      @post = @user.posts.take
     end
 
     subject { Like.new(author: @user, post: @post) }
@@ -16,7 +16,7 @@ RSpec.describe Like, type: :model do
 
     it 'likes_counter increases by 1 for a new like' do
       value = @post.likes_counter
-      Like.create(author: User.create(name: 'Ali', posts_counter: 0), post: @post)
+      Like.create(author: User.second, post: @post)
       expect(@post.likes_counter).to eq(value + 1)
     end
   end
